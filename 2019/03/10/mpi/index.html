@@ -4,8 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, 计算机,物联网,云计算">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex">
+    <meta name="keywords" content="mpi, 计算机,物联网,云计算">
+    <meta name="description" content="
+你无法想象自由意味着什么
+
+mpi简介 MPI是Message Passing Interface的缩写，MPI是一个跨语言的通讯协议，用于编写并行计算机。支持点对点和广播。MPI是一个信息传递应用程序接口，包括协议和和语义说明，他们指明">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Hello World | Cola</title>
+    <title>mpi | Cola</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -257,13 +260,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://attachments.gfan.com/forum/201608/04/005357ur88irwpi4n4r4i4.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Hello World
+                        mpi
                     </div>
                 </div>
             </div>
@@ -372,12 +375,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/并行计算/" target="_blank">
+                                <span class="chip bg-color">并行计算</span>
+                            </a>
+                        
+                            <a href="/tags/mpi/" target="_blank">
+                                <span class="chip bg-color">mpi</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/MPI/" class="post-category" target="_blank">
+                                MPI
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -385,21 +405,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2018-09-30
+                    2019-03-10
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        73
+                        572
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        2 分
                     </div>
                     
                 
@@ -415,19 +435,83 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span>
+                <blockquote>
+<p>你无法想象自由意味着什么</p>
+</blockquote>
+<h2 id="mpi简介"><a href="#mpi简介" class="headerlink" title="mpi简介"></a>mpi简介</h2><p> MPI是Message Passing Interface的缩写，MPI是一个跨语言的通讯协议，用于编写并行计算机。支持点对点和广播。MPI是一个信息传递应用程序接口，包括协议和和语义说明，他们指明其如何在各种实现中发挥其特性。MPI的目标是高性能，大规模性，和可移植性。</p>
+<h2 id="MPI-点对点通信实验"><a href="#MPI-点对点通信实验" class="headerlink" title="MPI 点对点通信实验"></a>MPI 点对点通信实验</h2><h3 id="求函数的积分"><a href="#求函数的积分" class="headerlink" title="求函数的积分"></a>求函数的积分</h3><p><img src="https://img-blog.csdnimg.cn/20190321154402106.png" alt="函数原型"></p>
+<p>我们知道求一个函数的积分可以转换为求函数与坐标轴之间的面积。如下图：</p>
+<p><img src="https://img-blog.csdnimg.cn/20190321154542660.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE4NDU0MDI1,size_16,color_FFFFFF,t_70" alt="函数"></p>
+<p>我们计算积分的思想就是将整个a到b这一段分成p个区域，将这p个区域交给p个计算机计算每个区域的面积，而对于每一个计算机所要计算的区域，又可以分成n个大小为h的区域，每一台计算机只需要计算这n个区域面积的累加和，最后汇总到一个节点即可。</p>
+<p><img src="https://img-blog.csdnimg.cn/201903211552238.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE4NDU0MDI1,size_16,color_FFFFFF,t_70" alt="公式"></p>
+<p>代码如下</p>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">"mpi.h"</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;math.h></span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span> <span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span><span class="token operator">*</span>argv<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    MPI_Comm comm<span class="token operator">=</span> MPI_COMM_WORLD<span class="token punctuation">;</span>
+    MPI_Status status<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> size<span class="token punctuation">,</span>rank<span class="token punctuation">;</span>
+    <span class="token keyword">double</span> a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>h<span class="token punctuation">,</span>sum<span class="token punctuation">,</span>tmp<span class="token punctuation">;</span>
+    <span class="token keyword">const</span> <span class="token keyword">double</span> pi<span class="token operator">=</span><span class="token function">acos</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> n<span class="token punctuation">,</span>j<span class="token punctuation">;</span>
+
+    <span class="token function">MPI_Init</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>argc<span class="token punctuation">,</span><span class="token operator">&amp;</span>argv<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">MPI_Comm_size</span><span class="token punctuation">(</span>comm<span class="token punctuation">,</span><span class="token operator">&amp;</span>size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">MPI_Comm_rank</span><span class="token punctuation">(</span>comm<span class="token punctuation">,</span><span class="token operator">&amp;</span>rank<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span><span class="token punctuation">(</span>rank <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Input n\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Input a&amp;b\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%lf%lf"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>a<span class="token punctuation">,</span><span class="token operator">&amp;</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span>j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>size<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">MPI_Send</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>n<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span>MPI_INT<span class="token punctuation">,</span>j<span class="token punctuation">,</span><span class="token number">99</span><span class="token punctuation">,</span>comm<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">MPI_Send</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>a<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span>MPI_DOUBLE<span class="token punctuation">,</span>j<span class="token punctuation">,</span><span class="token number">99</span><span class="token punctuation">,</span>comm<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">MPI_Send</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>b<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span>MPI_DOUBLE<span class="token punctuation">,</span>j<span class="token punctuation">,</span><span class="token number">99</span><span class="token punctuation">,</span>comm<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span><span class="token punctuation">{</span>
+        <span class="token function">MPI_Recv</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>n<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span>MPI_INT<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">99</span><span class="token punctuation">,</span>comm<span class="token punctuation">,</span><span class="token operator">&amp;</span>status<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">MPI_Recv</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>a<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span>MPI_DOUBLE<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">99</span><span class="token punctuation">,</span>comm<span class="token punctuation">,</span><span class="token operator">&amp;</span>status<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">MPI_Recv</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>b<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span>MPI_DOUBLE<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">99</span><span class="token punctuation">,</span>comm<span class="token punctuation">,</span><span class="token operator">&amp;</span>status<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    a <span class="token operator">=</span> a <span class="token operator">*</span> pi<span class="token punctuation">;</span>
+    b <span class="token operator">=</span> b <span class="token operator">*</span> pi<span class="token punctuation">;</span>
+    h <span class="token operator">=</span> <span class="token punctuation">(</span>b<span class="token operator">-</span>a<span class="token punctuation">)</span><span class="token operator">/</span>size<span class="token operator">/</span>n<span class="token punctuation">;</span>
+    sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span>j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>j <span class="token operator">&lt;</span> n<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        tmp <span class="token operator">=</span> <span class="token punctuation">(</span>a <span class="token operator">+</span> <span class="token punctuation">(</span>rank<span class="token operator">*</span>n <span class="token operator">+</span> j<span class="token punctuation">)</span><span class="token operator">*</span>h<span class="token punctuation">)</span> <span class="token operator">+</span> h<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span>
+        sum <span class="token operator">+</span><span class="token operator">=</span> <span class="token function">cos</span><span class="token punctuation">(</span>tmp<span class="token punctuation">)</span><span class="token operator">*</span>h<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%lf\n"</span><span class="token punctuation">,</span>sum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span><span class="token punctuation">(</span>rank <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span>j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>j <span class="token operator">&lt;</span> size<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token function">MPI_Recv</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>tmp<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span>MPI_DOUBLE<span class="token punctuation">,</span>j<span class="token punctuation">,</span><span class="token number">99</span><span class="token punctuation">,</span>comm<span class="token punctuation">,</span><span class="token operator">&amp;</span>status<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            sum <span class="token operator">+</span><span class="token operator">=</span> tmp<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span><span class="token punctuation">{</span>
+        <span class="token function">MPI_Send</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>sum<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span>MPI_DOUBLE<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">99</span><span class="token punctuation">,</span>comm<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">if</span><span class="token punctuation">(</span>rank <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Result of MPI: %lf\n"</span><span class="token punctuation">,</span>sum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Answer: %lf\n"</span><span class="token punctuation">,</span><span class="token function">sin</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token operator">-</span><span class="token function">sin</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">MPI_Finalize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>MPI说到底还是一个通信协议，只负责通信，我们在使用时需要清楚每一个进程的工作，非常小心的为每个进程分配各自的任务，因为如果一个机器down掉，可能整个工作都不能很好的完成。</p>
 
             </div>
             <hr>
@@ -575,7 +659,7 @@
                     </span>
                     <a href="http://cola72.top" class="b-link-green">Cola</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/09/30/helloworld/" class="b-link-green">Hello World</a>
+                    <a href="/2019/03/10/mpi/" class="b-link-green">mpi</a>
                 </p>
             </div>
         </div>
@@ -597,7 +681,7 @@
         repo: 'MyBolg',
         owner: 'lllll72',
         admin: "lllll72",
-        id: '2018-09-30T17-25-30',
+        id: '2019-03-10T20-56-36',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -620,7 +704,60 @@
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2019/03/10/mpi/">
+                    <div class="card-image">
+                        
+                        <img src="http://attachments.gfan.com/forum/201608/04/005357ur88irwpi4n4r4i4.jpg" class="responsive-img" alt="mpi">
+                        
+                        <span class="card-title">mpi</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+你无法想象自由意味着什么
+
+mpi简介 MPI是Message Passing Interface的缩写，MPI是一个跨语言的通讯协议，用于编写并行计算机。支持点对点和广播。MPI是一个信息传递应用程序接口，包括协议和和语义说明，他们指明</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/MPI/" class="post-category" target="_blank">
+                                    MPI
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/并行计算/" target="_blank">
+                        <span class="chip bg-color">并行计算</span>
+                    </a>
+                    
+                    <a href="/tags/mpi/" target="_blank">
+                        <span class="chip bg-color">mpi</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2019/03/07/datastructure/">
                     <div class="card-image">
@@ -641,9 +778,9 @@
 
 </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-07
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-07
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -664,40 +801,6 @@
                     </a>
                     
                 </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
-            </div>
-            <div class="card">
-                <a href="/2018/09/30/helloworld/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex</div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-09-30
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-user fa-fw"></i>
-                            Cola
-                            
-                        </span>
-                    </div>
-                </div>
-
                 
             </div>
         </div>
