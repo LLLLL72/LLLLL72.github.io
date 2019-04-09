@@ -4,8 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, 计算机,物联网,云计算">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex">
+    <meta name="keywords" content="hadoop初体验, 计算机,物联网,云计算">
+    <meta name="description" content="
+庭花蒙蒙水泠泠，小儿啼索树上莺
+
+前言本学期开了云计算概论这门课，前段时间简单学习了MPI的并行计算的一些东西，现在了解一下Hadoop，当然课堂上讲的东西是非常有限的，今天终于装好了伪分布式的Hadoop，而且跑了最简单的例子。
+三驾马">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Hello World | Cola</title>
+    <title>hadoop初体验 | Cola</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -257,13 +261,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://www.33lc.com/article/UploadPic/2012-8/20128210184129787.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Hello World
+                        hadoop初体验
                     </div>
                 </div>
             </div>
@@ -372,12 +376,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/并行计算/" target="_blank">
+                                <span class="chip bg-color">并行计算</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Hadoop/" class="post-category" target="_blank">
+                                Hadoop
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -385,21 +402,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2018-09-30
+                    2019-03-17
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        73
+                        1.8k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        6 分
                     </div>
                     
                 
@@ -415,19 +432,75 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span>
+                <blockquote>
+<p>庭花蒙蒙水泠泠，小儿啼索树上莺</p>
+</blockquote>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本学期开了云计算概论这门课，前段时间简单学习了MPI的并行计算的一些东西，现在了解一下Hadoop，当然课堂上讲的东西是非常有限的，今天终于装好了伪分布式的Hadoop，而且跑了最简单的例子。</p>
+<h2 id="三驾马车"><a href="#三驾马车" class="headerlink" title="三驾马车"></a>三驾马车</h2><p>说起Hadoop，不得不说谷歌。Google是大数据时代的奠基者，早在零几年，谷歌发表了著名的三篇论文。这包括Mapreduce编程模型、文件系统GFS以及列式存储BigTable，谷歌虽然没有开源，但是在论文中介绍了相关技术。所以Apache开源的Hadoop和Hbase，其中Hadoop的Mapreduce和HDFS的思想来源于谷歌mapreduce和GFS论文，而hbase来源于谷歌的Bigtable论文。我们采用廉价的商用计算机集群构建分布式文件系统，容错性是一个重要的指标。HDFS提供高容错性。</p>
+<h3 id="Hadoop各节点详解："><a href="#Hadoop各节点详解：" class="headerlink" title="Hadoop各节点详解："></a>Hadoop各节点详解：</h3><h4 id="1-Namenode"><a href="#1-Namenode" class="headerlink" title="1.Namenode"></a>1.Namenode</h4><p>目录的管理者，每一个集群都有一个，记录实时的数据变化，如果没有namenode，HDFS就无法工作，系统中的文件将会全部丢失，就无法将位于不同datanode上的文件快（blocks）重建文件。因此它的容错机制很有必要。</p>
+<p>它主要负责：</p>
+<p>接收用户的请求；<br>维护文件系统的目录结构；<br>管理文件与Block之间的练习；</p>
+<h4 id="2-Datanode"><a href="#2-Datanode" class="headerlink" title="2.Datanode"></a>2.Datanode</h4><p>是文件系统的工作节点，他们根据客户端或者是namenode的调度存储和检索。并且定期向namenode发送他们所存储的块(block)的列表。集群中的每个服务器都运行一个DataNode后台程序，这个后台程序负责把HDFS数据块读写到本地的文件系统。当需要通过客户端读/写某个 数据时，先由NameNode告诉客户端去哪个DataNode进行具体的读/写操作，然后，客户端直接与这个DataNode服务器上的后台程序进行通信，并且对相关的数据块进行读/写操作。</p>
+<p>它主要负责：</p>
+<p>存放数据；<br>文件被分割以Block的形式被存储在磁盘上；</p>
+<h4 id="3-Secondarynode"><a href="#3-Secondarynode" class="headerlink" title="3.Secondarynode"></a>3.Secondarynode</h4><p>SecondaryNameNode是一个用来监控HDFS状态的辅助后台程序。就想NameNode一样，每个集群都有一个SecondaryNameNode，并且部署在一个单独的服务器上。SecondaryNameNode不同于NameNode，它不接受或者记录任何实时的数据变化，但是，它会与NameNode进行通信，以便定期地保存HDFS元数据的快照。由于NameNode是单点的，通过SecondaryNameNode的快照功能，可以将NameNode的宕机时间和数据损失降低到最小。同时，如果NameNode发生问题，SecondaryNameNode可以及时地作为备用NameNode使用。它主要将namenode image（fsimage）和Edit log合并的。</p>
+<p>这两个文件的作用：</p>
+<p>fsimage包含Hadoop文件系统中的所有目录和文件idnode的序列化信息，其中对于文件包含了文件的修改时间、访问时间、块大小和组成一个文件块信息等。对于文件夹而言包含的信息主要有修改时间、访问控制权限等信息。而Edits文件主要是进行客户端对文件操作的记录，比如上传新文件等。并且edits文件会定期与fsimage文件进行合并操作。</p>
+<p>当客户端执行写操作，则NameNode会在edit log记录下来，并在内存中保存一份文件系统的元数据。</p>
+<p>要注意，fsimage文件是文件系统元数据的持久化检查点，不会在写操作后马上更新，这是因为fsimage的写入是非常缓慢的。</p>
+<p>由于Edit log不断增长，在NameNode重启时，会造成长时间NameNode处于安全模式，不可用状态，是非常不符合Hadoop的设计初衷。所以要周期性合并Edit log，但是这个工作由NameNode来完成，会占用大量资源，这样就出现了Secondary NameNode，它可以进行image检查点的处理工作。步骤如下：</p>
+<p>（1）SecondaryNameNode请求NameNode进行edit log的滚动（即创建一个新的edit log），将新的编辑操作记录到新生成的edit log文件；</p>
+<p>（2）通过http get方式，读取NameNode上的fsimage和edits文件，到SecondaryNameNode上；</p>
+<p>（3）读取fsimage到内存中，即加载fsimage到内存，然后执行edits中所有操作，并生成一个新的fsimage文件，即这个检查点被创建；</p>
+<p>（4）通过http post方式，将新的fsimage文件传送到NameNode；</p>
+<p>（5）NameNode使用新的fsimage替换原来的fsimage文件，让（1）创建的edits替代原来的edits文件；并且更新fsimage文件的检查点时间。</p>
+<p>整个处理过程完成。</p>
+<p>SecondaryNameNode的处理，是将fsimage和edites文件周期的合并，不会造成nameNode重启时造成长时间不可访问的情况。</p>
+<h4 id="4-Resourcemanager"><a href="#4-Resourcemanager" class="headerlink" title="4.Resourcemanager"></a>4.Resourcemanager</h4><p>（1）与客户端进行交互，处理来自于客户端的请求，如查询应用的运行情况等。</p>
+<p>（2）启动和管理各个应用的ApplicationMaster，并且为ApplicationMaster申请第一个Container用于启动和在它运行失败时将它重新启动。</p>
+<p>（3）管理NodeManager，接收来自NodeManager的资源和节点健康情况汇报，并向NodeManager下达管理资源命令，例如kill掉某个container。</p>
+<p>（4）资源管理和调度，接收来自ApplicationMaster的资源申请，并且为其进行分配。这个是它的最重要的职能。</p>
+<h4 id="5-Nodemanager"><a href="#5-Nodemanager" class="headerlink" title="5.Nodemanager"></a>5.Nodemanager</h4><p>NM是ResourceManager在每台机器上的代理，负责容器管理，并监控它们的资源使用情况，以及向ResourceManager/Scheduler提供资源使用报告。</p>
+<h3 id="Hadoop安装测试"><a href="#Hadoop安装测试" class="headerlink" title="Hadoop安装测试"></a>Hadoop安装测试</h3><p>网上有很多安装教程，在这里总结一下吧</p>
+<ol>
+<li>配置ssh免密登陆</li>
+<li>下载jdk&amp;hadoop</li>
+<li>安装jdk，解压jdk压缩包，将jdk目录添加到PATH</li>
+<li>安装Hadoop，解压Hadoop，修改XML配置文件</li>
+<li>将Hadoop下的指定文件添加到CLASSPATH</li>
+<li>启动hadoop测试。</li>
+<li>关于编程，IntelliJ在业界被公认为最好的java开发工具之一。可以新建maven工程进行编程，非常方便。</li>
+</ol>
+<p>下面是一在hdfs写文件的一个例子,至此，我又多会了另一种形式的HelloWorld。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>IOException<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>hadoop<span class="token punctuation">.</span>conf<span class="token punctuation">.</span>Configuration<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>hadoop<span class="token punctuation">.</span>fs<span class="token punctuation">.</span>FSDataOutputStream<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>hadoop<span class="token punctuation">.</span>fs<span class="token punctuation">.</span>FileStatus<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>hadoop<span class="token punctuation">.</span>fs<span class="token punctuation">.</span>FileSystem<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>hadoop<span class="token punctuation">.</span>fs<span class="token punctuation">.</span>Path<span class="token punctuation">;</span>
+
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Write</span><span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span> <span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> IOException
+  <span class="token punctuation">{</span>
+    Configuration conf<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Configuration</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Path inFile<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Path</span><span class="token punctuation">(</span><span class="token string">"/user/qile/input/file3.txt"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    FileSystem hdfs<span class="token operator">=</span>FileSystem<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>conf<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    FSDataOutputStream os<span class="token operator">=</span>hdfs<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>inFile<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    os<span class="token punctuation">.</span><span class="token function">writeUTF</span><span class="token punctuation">(</span><span class="token string">"Hello world!\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    os<span class="token punctuation">.</span><span class="token function">flush</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    os<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<p><img src="https://img-blog.csdnimg.cn/20190329195506919.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE4NDU0MDI1,size_16,color_FFFFFF,t_70" alt></p>
+<p>对了，我们可以在默认端口8088和9870分别看到节点和hdfs的一些状态信息。</p>
+<p><img src="https://img-blog.csdnimg.cn/20190329195907206.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE4NDU0MDI1,size_16,color_FFFFFF,t_70" alt></p>
+<p>因为我装的是伪分布式，所以显示只有一个活跃节点。</p>
+<p><img src="https://img-blog.csdnimg.cn/20190329195829854.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE4NDU0MDI1,size_16,color_FFFFFF,t_70" alt></p>
+<p>刚才写入的file3.txt</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>网上有一句话，说全球很多技术都落后于谷歌，而谷歌自身的技术也在影响全球。要知道，谷歌的三篇论文发布时间是十几年之前。而现在，除了谷歌，还有阿里等也肯定有自己一套系统，不然我们双十一怎么过呢！</p>
+<p>参考:<a href="https://blog.csdn.net/qq_37042789/article/details/81408736" target="_blank" rel="noopener">Patience在努力</a></p>
 
             </div>
             <hr>
@@ -575,7 +648,7 @@
                     </span>
                     <a href="http://cola72.top" class="b-link-green">Cola</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/09/30/helloworld/" class="b-link-green">Hello World</a>
+                    <a href="/2019/03/17/hadoop/" class="b-link-green">hadoop初体验</a>
                 </p>
             </div>
         </div>
@@ -597,7 +670,7 @@
         repo: 'MyBolg',
         owner: 'lllll72',
         admin: "lllll72",
-        id: '2018-09-30T17-25-30',
+        id: '2019-03-17T21-48-09',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -620,47 +693,45 @@
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/03/07/datastructure/">
+                <a href="/2019/03/17/hadoop/">
                     <div class="card-image">
                         
-                        <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1549175044,1117989564&amp;fm=26&amp;gp=0.jpg" class="responsive-img" alt="数据结构复习大纲">
+                        <img src="http://www.33lc.com/article/UploadPic/2012-8/20128210184129787.jpg" class="responsive-img" alt="hadoop初体验">
                         
-                        <span class="card-title">数据结构复习大纲</span>
+                        <span class="card-title">hadoop初体验</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
+庭花蒙蒙水泠泠，小儿啼索树上莺
 
-善良一点，因为每个人都在与人生苦战
-
-前言这里将数据结构的考纲搬过来，以记录自己的复习进度
-课程基本要求全面系统地掌握队列、堆、栈、树、图等基本数据结构，深刻理解和熟练掌握课程中的典型算法，为计算机学科的学习打下坚实基础。
-考试内容
-
-</div>
+前言本学期开了云计算概论这门课，前段时间简单学习了MPI的并行计算的一些东西，现在了解一下Hadoop，当然课堂上讲的东西是非常有限的，今天终于装好了伪分布式的Hadoop，而且跑了最简单的例子。
+三驾马</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-07
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/DataStructure/" class="post-category" target="_blank">
-                                    DataStructure
+                            <a href="/categories/Hadoop/" class="post-category" target="_blank">
+                                    Hadoop
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/DataStructure/" target="_blank">
-                        <span class="chip bg-color">DataStructure</span>
+                    <a href="/tags/并行计算/" target="_blank">
+                        <span class="chip bg-color">并行计算</span>
                     </a>
                     
                 </div>
@@ -671,33 +742,54 @@
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/09/30/helloworld/">
+                <a href="/2019/03/15/mpi2/">
                     <div class="card-image">
                         
+                        <img src="http://a.hiphotos.baidu.com/zhidao/pic/item/3c6d55fbb2fb4316f58cd08820a4462308f7d3b5.jpg" class="responsive-img" alt="mpi communication(2)">
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">mpi communication(2)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex</div>
+                    <div class="summary block-with-text">
+佳期不可再，风雨杳如年
+
+前言集群函数相对于点对点函数来说效率更高，MPI提供了丰富的通信形式。而且3.0版本以后提供了非阻塞的集群通信方式。
+介绍1. 广播(Broadcast)图片会更直观一些
+
+2. Gather
+3.Scatter</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-09-30
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-15
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            Cola
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/MPI/" class="post-category" target="_blank">
+                                    MPI
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/并行计算/" target="_blank">
+                        <span class="chip bg-color">并行计算</span>
+                    </a>
+                    
+                    <a href="/tags/MPI集群通信/" target="_blank">
+                        <span class="chip bg-color">MPI集群通信</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>

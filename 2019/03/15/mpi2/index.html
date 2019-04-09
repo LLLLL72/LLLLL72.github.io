@@ -4,8 +4,15 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, 计算机,物联网,云计算">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex">
+    <meta name="keywords" content="mpi communication(2), 计算机,物联网,云计算">
+    <meta name="description" content="
+佳期不可再，风雨杳如年
+
+前言集群函数相对于点对点函数来说效率更高，MPI提供了丰富的通信形式。而且3.0版本以后提供了非阻塞的集群通信方式。
+介绍1. 广播(Broadcast)图片会更直观一些
+
+2. Gather
+3.Scatter">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +20,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Hello World | Cola</title>
+    <title>mpi communication(2) | Cola</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -257,13 +264,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://a.hiphotos.baidu.com/zhidao/pic/item/3c6d55fbb2fb4316f58cd08820a4462308f7d3b5.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Hello World
+                        mpi communication(2)
                     </div>
                 </div>
             </div>
@@ -372,12 +379,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/并行计算/" target="_blank">
+                                <span class="chip bg-color">并行计算</span>
+                            </a>
+                        
+                            <a href="/tags/MPI集群通信/" target="_blank">
+                                <span class="chip bg-color">MPI集群通信</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/MPI/" class="post-category" target="_blank">
+                                MPI
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -385,21 +409,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2018-09-30
+                    2019-03-15
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        73
+                        625
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        2 分
                     </div>
                     
                 
@@ -415,19 +439,99 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span>
+                <blockquote>
+<p>佳期不可再，风雨杳如年</p>
+</blockquote>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>集群函数相对于点对点函数来说效率更高，MPI提供了丰富的通信形式。而且3.0版本以后提供了非阻塞的集群通信方式。</p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><h3 id="1-广播-Broadcast"><a href="#1-广播-Broadcast" class="headerlink" title="1. 广播(Broadcast)"></a>1. 广播(Broadcast)</h3><p>图片会更直观一些</p>
+<p><img src="https://img-blog.csdnimg.cn/20190328205157589.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE4NDU0MDI1,size_16,color_FFFFFF,t_70" alt="广播"></p>
+<h3 id="2-Gather"><a href="#2-Gather" class="headerlink" title="2. Gather"></a>2. Gather</h3><p><img src="https://img-blog.csdnimg.cn/20190328205314722.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE4NDU0MDI1,size_16,color_FFFFFF,t_70" alt="Gather"></p>
+<h3 id="3-Scatter"><a href="#3-Scatter" class="headerlink" title="3.Scatter"></a>3.Scatter</h3><p>这个就比较优秀了，与广播分发给每一个进程的数据都不相同。</p>
+<p><img src="https://img-blog.csdnimg.cn/20190328205415865.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE4NDU0MDI1,size_16,color_FFFFFF,t_70" alt="Scatter"></p>
+<h3 id="4-Gather与Allgather"><a href="#4-Gather与Allgather" class="headerlink" title="4. Gather与Allgather"></a>4. Gather与Allgather</h3><p>Allgather是让每一个进程都获取所有进程的数据。</p>
+<p><img src="https://img-blog.csdnimg.cn/201903282102304.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzE4NDU0MDI1,size_16,color_FFFFFF,t_70" alt="Compare"></p>
+<h2 id="自定义MPI数据类型并传送"><a href="#自定义MPI数据类型并传送" class="headerlink" title="自定义MPI数据类型并传送"></a>自定义MPI数据类型并传送</h2><p>重点理解一下函数各个参数就明白了，且来看函数原型</p>
+<pre class=" language-c"><code class="language-c"><span class="token function">MPI_Type_struct</span><span class="token punctuation">(</span>            oldtype_nums 结构体类型个数，相同类型一块空间
+                            <span class="token punctuation">,</span>blocklens_array 每个类型所对应的那块空间的长度
+                            <span class="token punctuation">,</span>displs_array    每块的起始地址
+                            <span class="token punctuation">,</span>old_type_array 指定每个块的起始地址与头的偏移量
+                            <span class="token punctuation">,</span><span class="token operator">&amp;</span>new_mpi_type 新类型
+                            <span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server
+<p>这里假设有一个集群，需要对每一个电脑的运算速度进行排序，如果使用了结构体会更方便。<br>就下面这段代码来说，用Allgather让每个电脑获得所有电脑的速度，然后每个电脑遍历一遍这个数据，记录下比自己运算速度大的个数，最后就可以知道自己在集群众运算速度的排名了。</p>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+    <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"mpi.h"</span></span>
+    <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;time.h></span></span>
+    <span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;malloc.h></span></span>
+    <span class="token macro property">#<span class="token directive keyword">define</span> oldtype_nums 2</span>
+    <span class="token macro property">#<span class="token directive keyword">define</span> INT_NUMS 1</span>
+    <span class="token macro property">#<span class="token directive keyword">define</span> LONG_NUMS 1</span>
+
+    <span class="token keyword">int</span> <span class="token function">main</span> <span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span><span class="token keyword">char</span> <span class="token operator">*</span><span class="token operator">*</span>argv<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+    <span class="token keyword">typedef</span> <span class="token keyword">struct</span><span class="token punctuation">{</span>
+        <span class="token keyword">long</span> speed<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> index<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>Computer<span class="token punctuation">;</span>
+    MPI_Comm comm <span class="token operator">=</span> MPI_COMM_WORLD<span class="token punctuation">;</span>
+    MPI_Status status<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> size<span class="token punctuation">,</span>rank<span class="token punctuation">,</span>speed<span class="token punctuation">,</span>i<span class="token punctuation">,</span>index<span class="token punctuation">;</span>
+    <span class="token function">MPI_Init</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>argc<span class="token punctuation">,</span><span class="token operator">&amp;</span>argv<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">MPI_Comm_size</span><span class="token punctuation">(</span>comm<span class="token punctuation">,</span><span class="token operator">&amp;</span>size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">MPI_Comm_rank</span><span class="token punctuation">(</span>comm<span class="token punctuation">,</span><span class="token operator">&amp;</span>rank<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+    <span class="token keyword">int</span> blocklens_array<span class="token punctuation">[</span>oldtype_nums<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//用于存放每个块的长度</span>
+    MPI_Aint displs_array<span class="token punctuation">[</span>oldtype_nums<span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//使用MPI_Aint，单个元素的存放空间可以放得下地址。</span>
+    MPI_Datatype old_type_array<span class="token punctuation">[</span>oldtype_nums<span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//用于存放每个块的类型</span>
+
+
+    MPI_Datatype MPI_Computer<span class="token punctuation">;</span>
+
+
+
+    Computer mycomputer<span class="token punctuation">;</span>
+
+    old_type_array<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">=</span>MPI_LONG<span class="token punctuation">;</span>
+    old_type_array<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span>MPI_INT<span class="token punctuation">;</span>
+    blocklens_array<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+    blocklens_array<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+
+    <span class="token function">MPI_Address</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>mycomputer<span class="token punctuation">.</span>index<span class="token punctuation">,</span><span class="token operator">&amp;</span>displs_array<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">MPI_Address</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>mycomputer<span class="token punctuation">.</span>speed<span class="token punctuation">,</span><span class="token operator">&amp;</span>displs_array<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    displs_array<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span>displs_array<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">-</span>displs_array<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    displs_array<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+
+    <span class="token function">MPI_Type_struct</span><span class="token punctuation">(</span>oldtype_nums<span class="token punctuation">,</span>blocklens_array<span class="token punctuation">,</span>displs_array<span class="token punctuation">,</span>old_type_array<span class="token punctuation">,</span><span class="token operator">&amp;</span>MPI_Computer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">MPI_Type_commit</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>MPI_Computer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+    Computer <span class="token operator">*</span>computer<span class="token operator">=</span><span class="token constant">NULL</span><span class="token punctuation">;</span>
+    computer <span class="token operator">=</span> <span class="token punctuation">(</span>Computer<span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>Computer<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    Computer <span class="token operator">*</span>computers<span class="token operator">=</span><span class="token constant">NULL</span><span class="token punctuation">;</span>
+    computers <span class="token operator">=</span> <span class="token punctuation">(</span>Computer<span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>Computer<span class="token punctuation">)</span><span class="token operator">*</span>size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    computer<span class="token operator">-></span>speed<span class="token operator">=</span>rank<span class="token punctuation">;</span>
+    computer<span class="token operator">-></span>index<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+
+
+
+    <span class="token function">MPI_Allgather</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>computer<span class="token operator">-></span>speed<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span>MPI_Computer<span class="token punctuation">,</span><span class="token operator">&amp;</span>computers<span class="token operator">-></span>speed<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span>MPI_Computer<span class="token punctuation">,</span>comm<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>size<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>computers<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>speed <span class="token operator">></span> computers<span class="token punctuation">[</span>rank<span class="token punctuation">]</span><span class="token punctuation">.</span>speed<span class="token punctuation">)</span>
+           <span class="token punctuation">(</span>computers<span class="token punctuation">[</span>rank<span class="token punctuation">]</span><span class="token punctuation">.</span>index<span class="token punctuation">)</span><span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"The index of process %d is %d ,speed is %ld\n"</span><span class="token punctuation">,</span>rank<span class="token punctuation">,</span>computers<span class="token punctuation">[</span>rank<span class="token punctuation">]</span><span class="token punctuation">.</span>index<span class="token punctuation">,</span>computers<span class="token punctuation">[</span>rank<span class="token punctuation">]</span><span class="token punctuation">.</span>speed<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">MPI_Finalize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>MPI所提供的通信方式非常丰富，这只是一个简单的例子。可以思考一下如果要计算矩阵乘法，我们可以用到哪些函数呢？可以有几种方法？</p>
 
             </div>
             <hr>
@@ -575,7 +679,7 @@
                     </span>
                     <a href="http://cola72.top" class="b-link-green">Cola</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/09/30/helloworld/" class="b-link-green">Hello World</a>
+                    <a href="/2019/03/15/mpi2/" class="b-link-green">mpi communication(2)</a>
                 </p>
             </div>
         </div>
@@ -597,7 +701,7 @@
         repo: 'MyBolg',
         owner: 'lllll72',
         admin: "lllll72",
-        id: '2018-09-30T17-25-30',
+        id: '2019-03-15T21-15-30',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -622,34 +726,30 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/03/07/datastructure/">
+                <a href="/2019/03/17/hadoop/">
                     <div class="card-image">
                         
-                        <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1549175044,1117989564&amp;fm=26&amp;gp=0.jpg" class="responsive-img" alt="数据结构复习大纲">
+                        <img src="http://www.33lc.com/article/UploadPic/2012-8/20128210184129787.jpg" class="responsive-img" alt="hadoop初体验">
                         
-                        <span class="card-title">数据结构复习大纲</span>
+                        <span class="card-title">hadoop初体验</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
+庭花蒙蒙水泠泠，小儿啼索树上莺
 
-善良一点，因为每个人都在与人生苦战
-
-前言这里将数据结构的考纲搬过来，以记录自己的复习进度
-课程基本要求全面系统地掌握队列、堆、栈、树、图等基本数据结构，深刻理解和熟练掌握课程中的典型算法，为计算机学科的学习打下坚实基础。
-考试内容
-
-</div>
+前言本学期开了云计算概论这门课，前段时间简单学习了MPI的并行计算的一些东西，现在了解一下Hadoop，当然课堂上讲的东西是非常有限的，今天终于装好了伪分布式的Hadoop，而且跑了最简单的例子。
+三驾马</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-07
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-17
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/DataStructure/" class="post-category" target="_blank">
-                                    DataStructure
+                            <a href="/categories/Hadoop/" class="post-category" target="_blank">
+                                    Hadoop
                                 </a>
                             
                             
@@ -659,8 +759,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/DataStructure/" target="_blank">
-                        <span class="chip bg-color">DataStructure</span>
+                    <a href="/tags/并行计算/" target="_blank">
+                        <span class="chip bg-color">并行计算</span>
                     </a>
                     
                 </div>
@@ -671,33 +771,50 @@
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/09/30/helloworld/">
+                <a href="/2019/03/10/mpi/">
                     <div class="card-image">
                         
+                        <img src="http://attachments.gfan.com/forum/201608/04/005357ur88irwpi4n4r4i4.jpg" class="responsive-img" alt="mpi communication(1)">
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">mpi communication(1)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex</div>
+                    <div class="summary block-with-text">
+你无法想象自由意味着什么
+
+mpi简介 MPI是Message Passing Interface的缩写，MPI是一个跨语言的通讯协议，用于编写并行计算机。支持点对点和广播。MPI是一个信息传递应用程序接口，包括协议和和语义说明，他们指明</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-09-30
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-10
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            Cola
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/MPI/" class="post-category" target="_blank">
+                                    MPI
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/并行计算/" target="_blank">
+                        <span class="chip bg-color">并行计算</span>
+                    </a>
+                    
+                    <a href="/tags/mpi点对点通信/" target="_blank">
+                        <span class="chip bg-color">mpi点对点通信</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
