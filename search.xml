@@ -83,31 +83,6 @@
     
     
     <entry>
-      <title>数据结构复习大纲</title>
-      <link href="/2019/03/07/datastructure/"/>
-      <url>/2019/03/07/datastructure/</url>
-      
-        <content type="html"><![CDATA[<p><img src="/images/datastructure/hello.jpg" alt></p><blockquote><p>善良一点，因为每个人都在与人生苦战</p></blockquote><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这里将数据结构的考纲搬过来，以记录自己的复习进度</p><h2 id="课程基本要求"><a href="#课程基本要求" class="headerlink" title="课程基本要求"></a>课程基本要求</h2><p>全面系统地掌握队列、堆、栈、树、图等基本数据结构，深刻理解和熟练掌握课程中的典型算法，为计算机学科的学习打下坚实基础。</p><h2 id="考试内容"><a href="#考试内容" class="headerlink" title="考试内容"></a>考试内容</h2><table><thead><tr><th>考点</th><th style="text-align:center">完成</th></tr></thead><tbody><tr><td>链表、间接寻址和模拟指针</td><td style="text-align:center">done</td></tr><tr><td>数组和矩阵</td><td style="text-align:center"></td></tr><tr><td>堆栈和队列及其应用</td><td style="text-align:center"></td></tr><tr><td>跳表和散列</td><td style="text-align:center"></td></tr><tr><td>二叉树和其他树</td><td style="text-align:center"></td></tr><tr><td>合并/搜索应用,堆和堆排序</td><td style="text-align:center"></td></tr><tr><td>左高树,霍夫曼编码和竞赛树</td><td style="text-align:center"></td></tr><tr><td>搜索树,AVL树或红黑树,直方图</td><td style="text-align:center"></td></tr><tr><td>图</td><td style="text-align:center"></td></tr><tr><td>图和贪婪算法</td><td style="text-align:center"></td></tr><tr><td>货箱装载,0/1背包,最短路径和生成树</td><td style="text-align:center"></td></tr><tr><td>分而治之算法</td><td style="text-align:center"></td></tr><tr><td>动态编程</td><td style="text-align:center"></td></tr><tr><td>回溯和分枝定界算法</td></tr></tbody></table>]]></content>
-      
-      
-      <categories>
-          
-          <category> DataStructure </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> DataStructure </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Hello World</title>
       <link href="/2018/09/30/helloworld/"/>
       <url>/2018/09/30/helloworld/</url>
